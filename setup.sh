@@ -8,7 +8,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.lis
 
 # install php
 apt-get update && apt-get upgrade -y
-apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat
+apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat libnss3 libgconf-2-4
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # install php extensions
