@@ -11,6 +11,9 @@ apt-get update && apt-get upgrade -y
 apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat libnss3 libgconf-2-4 wget
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# set memory limit
+echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini
+
 # install php extensions
 docker-php-ext-install pdo_mysql gd zip bcmath
 pecl install xdebug > /dev/null
