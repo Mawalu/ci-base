@@ -11,10 +11,15 @@ apt-get update && apt-get upgrade -y
 apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat libnss3 libgconf-2-4 wget
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# chrome dev
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+apt-get update && apt-get install -y google-chrome-unstable
+
 # set memory limit
 echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 # install php extensions
-docker-php-ext-install pdo_mysql gd zip bcmath
+docker-php-ext-install pdo_mysql gd zip bcmath intl
 pecl install xdebug > /dev/null
 docker-php-ext-enable xdebug bcmath
