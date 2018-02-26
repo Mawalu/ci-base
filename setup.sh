@@ -1,10 +1,13 @@
 #!/bin/sh
 
 # install node.js and yarn
-curl -sL https://deb.nodesource.com/setup_7.x | bash -
+curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+# install quasar cli
+yarn global add quasar-cli
 
 # install php
 apt-get update && apt-get upgrade -y
