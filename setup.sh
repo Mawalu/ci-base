@@ -11,7 +11,7 @@ yarn global add quasar-cli
 
 # install php
 apt-get update && apt-get upgrade -y
-apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat libnss3 libgconf-2-4 wget zlib1g-dev libicu-dev g++ libpq-dev
+apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat libnss3 libgconf-2-4 wget zlib1g-dev libicu-dev g++ libpq-dev libxml2-dev
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # chrome dev
@@ -24,6 +24,6 @@ echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 # install php extensions
 RUN docker-php-ext-configure intl
-docker-php-ext-install pdo_mysql gd zip bcmath intl pdo_pgsql
+docker-php-ext-install pdo_mysql gd zip bcmath intl pdo_pgsql soap xml
 pecl install xdebug > /dev/null
 docker-php-ext-enable xdebug bcmath
