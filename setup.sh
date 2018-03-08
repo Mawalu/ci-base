@@ -6,13 +6,13 @@ curl -sL https://deb.nodesource.com/setup_8.x | bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-# install quasar cli
-yarn global add quasar-cli
-
-# install php
+# install dependencies
 apt-get update && apt-get upgrade -y
 apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat libnss3 libgconf-2-4 wget zlib1g-dev libicu-dev g++ libpq-dev libxml2-dev
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# install quasar cli
+yarn global add quasar-cli
 
 # chrome dev
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
