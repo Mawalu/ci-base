@@ -27,7 +27,7 @@ echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 # install php extensions
 docker-php-ext-configure intl
-docker-php-ext-install pdo_mysql zip intl pdo_pgsql soap xml bcmath gd
+docker-php-ext-install pdo_mysql zip intl pdo_pgsql soap xml gd
 
 pecl install xdebug > /dev/null
-docker-php-ext-enable xdebug bcmath
+docker-php-ext-enable xdebug
