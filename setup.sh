@@ -1,7 +1,7 @@
 #!/bin/sh
 
 apt-get update
-apt-get install gnupg2
+apt-get install gnupg
 
 # install node.js and yarn
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
