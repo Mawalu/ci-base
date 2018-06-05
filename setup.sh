@@ -8,7 +8,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.lis
 
 # install dependencies
 apt-get update && apt-get upgrade -y
-apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat libnss3 libgconf-2-4 wget zlib1g-dev libicu-dev g++ libpq-dev libxml2-dev
+apt-get install -y git openssh-client zip curl libpng12-dev libgd-dev nodejs xvfb yarn netcat libnss3 libgconf-2-4 wget zlib1g-dev libicu-dev g++ libpq-dev libxml2-dev libpng-dev
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # install quasar cli
