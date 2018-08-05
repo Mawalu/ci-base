@@ -32,7 +32,7 @@ echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 # install php extensions
 docker-php-ext-configure intl
-docker-php-ext-install pdo_mysql zip intl pdo_pgsql soap xml gd bcmath
+docker-php-ext-install pdo_mysql zip intl pdo_pgsql soap xml gd bcmath exif
 
 pecl install xdebug pecl install imagick-3.4.3 > /dev/null
 docker-php-ext-enable xdebug bcmath imagick
